@@ -116,7 +116,7 @@ public static void main(String args[]) throws IOException
 {
 Reader s=new Reader();
 String str=s.readLine();
-String []ch=str.split(" ");
+String []ch=str.split("\\s");
 int l=ch.length;
 int a[]=new int[l];
 boolean p[]=new boolean[l];
@@ -153,7 +153,7 @@ for(int i=0;i<l1;i++)
         if(n.get(i)==a[j])
         f[i]++;
     }
-    f[i]--;
+    
 }
 
 for(int i=0;i<l1;i++)
