@@ -153,7 +153,6 @@ for(int i=0;i<l1;i++)
         if(n.get(i)==a[j])
         f[i]++;
     }
-    
 }
 
 for(int i=0;i<l1;i++)
