@@ -117,7 +117,7 @@ Reader s=new Reader();
 
 String str=s.readLine();
 int k=s.nextInt();
-String []st=str.split(" ");
+String []st=str.split("\\s");
 int l=st.length;
 int a[]=new int [l];
 
