@@ -1,6 +1,7 @@
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 public class beginner3 {
 static class Reader {
 final private int BUFFER_SIZE = 1 << 16;
@@ -121,24 +122,31 @@ String []st=str.split("\\s");
 int l=st.length;
 int a[]=new int [l];
 
+Arrays.fill(a,0);
 for(int i=0;i<l;i++)
 {
     a[i]=Integer.parseInt(st[i]);
 }
 
-boolean p=false;
-for(int i=0;i<l;i++)
+Arrays.sort(a);
+
+int h=0;
+l-=1;
+boolean f=false;
+
+while(h<=l)
 {
-    for(int j=0;j<l;j++)
+    if((a[h]+a[l])>k)
+    h--;
+    else
+    if((a[h]+a[l])<k)
+    l--;
+    else 
     {
-        if (i != j) {
-            if (a[i] + a[j] == k) {
-                p = true;
-                break;
-            }
-        }
+        f=true;
+        break;
     }
 }
-System.out.println(p);
+System.out.println(f);
 }//main
 }
