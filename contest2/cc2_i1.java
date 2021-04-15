@@ -1,7 +1,12 @@
+package contest2;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-public class beginner1 {
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class cc2_i1 {
 static class Reader {
 final private int BUFFER_SIZE = 1 << 16;
 private DataInputStream din;
@@ -114,13 +119,34 @@ din.close();
 public static void main(String args[]) throws IOException
 {
 Reader s=new Reader();
-int n=s.nextInt();
-int sum=0;
-while(n>0)
-{
-    sum+=(n%10);
-    n/=10;
-}
-System.out.println(sum);
+
+int a[]={1,2,2,2,3,3,4,4,5,6,6,6,7};
+
+int n=dup(a,a.length);
+
+System.out.println(" ");
+System.out.println(n);
+
 }//main
+
+static int dup(int a[],int n)
+{
+    if(n==0 ||n==1)
+    return n;
+    
+    int j=0;
+    int temp[]=new int[n];
+    for(int i=0;i<n-1;i++)
+    {
+        if(a[i]!=a[i+1])
+        temp[j++]=a[i];
+    }
+    temp[j++]=a[n-1];
+
+    for(int i=0;i<j;i++)
+    System.out.print(temp[i]+" ");
+
+    return j;
+
+}
 }

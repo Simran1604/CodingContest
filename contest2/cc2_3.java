@@ -1,7 +1,12 @@
+package contest2;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-public class beginner4 {
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class cc2_3 {
 static class Reader {
 final private int BUFFER_SIZE = 1 << 16;
 private DataInputStream din;
@@ -114,15 +119,21 @@ din.close();
 public static void main(String args[]) throws IOException
 {
 Reader s=new Reader();
+
 int t=s.nextInt();
+
 for(int i=0;i<t;i++)
 {
-    int n=s.nextInt();
-    int m=s.nextInt();
-    if(m%n==0)
-    System.out.println("Yes");
+    long n=s.nextLong();
+     int k=0;
+
+     String num=String.valueOf(n);
+     k=num.length();
+
+    if(k<=3)
+    System.out.println(k);
     else 
-    System.out.println("No");
+    System.out.println("More than 3 digits.");
 }
 
 }//main

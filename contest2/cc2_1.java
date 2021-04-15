@@ -1,8 +1,10 @@
+package contest2;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
-public class beginner3 {
+public class cc2_1 {
 static class Reader {
 final private int BUFFER_SIZE = 1 << 16;
 private DataInputStream din;
@@ -116,37 +118,19 @@ public static void main(String args[]) throws IOException
 {
 Reader s=new Reader();
 
-String str=s.readLine();
-int k=s.nextInt();
-String []st=str.split("\\s");
-int l=st.length;
-int a[]=new int [l];
+Long t=s.nextLong();
 
-Arrays.fill(a,0);
-for(int i=0;i<l;i++)
+for(int i=0;i<t;i++)
 {
-    a[i]=Integer.parseInt(st[i]);
+    Long a[]=new Long[3];
+
+    for(int j=0;j<3;j++)
+    a[j]=s.nextLong();
+
+    Arrays.sort(a);
+
+    System.out.println(a[1]);
+
 }
-
-Arrays.sort(a);
-
-int h=0;
-l-=1;
-boolean f=false;
-
-while(h<=l)
-{
-    if((a[h]+a[l])>k)
-    h--;
-    else
-    if((a[h]+a[l])<k)
-    l--;
-    else 
-    {
-        f=true;
-        break;
-    }
-}
-System.out.println(f);
 }//main
 }

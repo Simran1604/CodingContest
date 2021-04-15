@@ -1,8 +1,12 @@
+package contest2;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.*;
-public class beginner5 {
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class cc2_2 {
 static class Reader {
 final private int BUFFER_SIZE = 1 << 16;
 private DataInputStream din;
@@ -115,54 +119,22 @@ din.close();
 public static void main(String args[]) throws IOException
 {
 Reader s=new Reader();
-String str=s.readLine();
-String []ch=str.split("\\s");
-int l=ch.length;
-int a[]=new int[l];
-boolean p[]=new boolean[l];
 
-for(int i=0;i<l;i++)
+int t=s.nextInt();
+
+for(int i=0;i<t;i++)
 {
-    a[i]=Integer.parseInt(ch[i]);
-}
-
-ArrayList<Integer> n=new ArrayList<Integer>();
-
-for(int i=0;i<l;i++)
-{
-    if(p[i]==false)
-    { 
-        n.add(a[i]);
-        p[i]=true;
-    
-    for(int j=i+1;j<l;j++)
-    {         
-        if(a[i]==a[j] && p[j]==false)
-          p[j]=true;
-    }
-    }
-}
-
-int l1=n.size();
-int f[]=new int[l1];
-
-for(int i=0;i<l1;i++)
-{
-    for(int j=0;j<l;j++)
+    int k=0;
+    int n=s.nextInt();
+    for(int j=1;j<n;j++)
     {
-        if(n.get(i)==a[j])
-        f[i]++;
+        if(n%j==0)
+        k++;
     }
+    if(k==1)
+    System.out.println("yes");
+    else 
+    System.out.println("no");
 }
-
-for(int i=0;i<l1;i++)
-{
-    if(f[i]%2 !=0)
-    {
-        System.out.println(n.get(i));
-        break;
-    }
-}
-
 }//main
 }

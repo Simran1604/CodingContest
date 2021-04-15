@@ -1,10 +1,12 @@
+package contest2;
+
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-// import java.io.InputStreamReader;
-// import java.util.Scanner;
-// import java.util.StringTokenizer;
-public class beginner2 {
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class cc2_i2 {
 static class Reader {
 final private int BUFFER_SIZE = 1 << 16;
 private DataInputStream din;
@@ -117,14 +119,12 @@ din.close();
 public static void main(String args[]) throws IOException
 {
 Reader s=new Reader();
+
 int n=s.nextInt();
-int x=s.nextInt();
-
-
-for(int i=0;i<n;i++)
-if(s.nextInt()>=x)
-System.out.println("YES");
+if((n/2)*2==n)
+System.out.println("Even");
 else 
-System.out.println("NO");
+System.out.println("Odd");
+
 }//main
 }
